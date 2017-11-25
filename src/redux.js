@@ -1,10 +1,4 @@
-import {
-  applyMiddleware,
-  combineReducers,
-  createStore,
-} from 'redux';
-
-import thunk from 'redux-thunk';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
 
 // actions.js
 export const activateGeod = geod => ({
@@ -34,12 +28,8 @@ export const reducers = combineReducers({
 
 // store.js
 export function configureStore(initialState = {}) {
-  const store = createStore(
-    reducers,
-    initialState,
-    applyMiddleware(thunk)
-  )
+  const store = createStore(reducers, initialState);
   return store;
-};
+}
 
 export const store = configureStore();
